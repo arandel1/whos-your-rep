@@ -32,7 +32,7 @@ body {
 
 h1 {
   font-size: 3em;
-  line-height: 1.1;
+  line-height: 1;
 }
 
 .footer-bar {
@@ -48,11 +48,13 @@ h1 {
   background-color: #a796f5;
   color:#ffffffde;
   padding: .5em;
+  padding-left: 2em;
   }
 
 .user-address-form {
   /* border: 2px solid black; */
   box-sizing: border-box;
+  margin-top: 1em;
   padding: 1rem;
   border-radius: 1em;
   display:grid;
