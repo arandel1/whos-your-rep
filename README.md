@@ -2,6 +2,7 @@
 
 - Discover what elected officials are assigned to your geographic location and how they represent you.
 - Tech Stack: JavaScript, React, Vite, Express, Node.js
+- Domain: https://whos-your-rep.vercel.app/
 
 # Project Status and Future Plans
 - Source a new API, as Google's is retiring in April 2025.
@@ -13,6 +14,9 @@
 
 # Screenshots and Usage
 
+<img width="100" height="200" src="wyr1.png" />
+<img width="100" height="200" src="wyr2.png" />
+<img width="100" height="200" src="wyr3.png" />
 
 # React + Vite
 
