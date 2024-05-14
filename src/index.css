@@ -25,17 +25,18 @@ a:hover {
 body {
   margin: 20px;
   display: flex;
-  place-items: center;
+  /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 3em;
   line-height: 1.1;
 }
 
 .footer-bar {
+  font-size:x-small;
   position:fixed;
   left: 0; 
   bottom: 0;

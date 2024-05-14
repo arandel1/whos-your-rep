@@ -18,7 +18,6 @@
 <img src="/assets/wyr2.png" />
 <img src="/assets/wyr3.png" />
 
-
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
