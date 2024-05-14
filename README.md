@@ -14,9 +14,9 @@
 
 # Screenshots and Usage
 
-<img width="100" height="200" src="/assets/wyr1.png" />
-<img width="100" height="200" src="/assets/wyr2.png" />
-<img width="100" height="200" src="/assets/wyr3.png" />
+<img src="/assets/wyr1.png" />
+<img src="/assets/wyr2.png" />
+<img src="/assets/wyr3.png" />
 
 
 # React + Vite
