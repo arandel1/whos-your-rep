@@ -22,6 +22,8 @@ export default function AddressForm(sendAddressToApp) {
     if(!showError){
       sendAddressToApp.onSubmit(addressData);
     }
+    
+
   }
 
   return (
