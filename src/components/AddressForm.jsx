@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { PulseLoader } from "react-spinners";
 
 export default function AddressForm(sendAddressToApp) {
   const [addressData, setAddressData] = useState({
@@ -10,6 +11,7 @@ export default function AddressForm(sendAddressToApp) {
 
   const [showError, setShowError] = useState(false);
   const [emptyFormError, setEmptyFormError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,16 +20,25 @@ export default function AddressForm(sendAddressToApp) {
     setAddressData({ ...addressData, [name]: value })
   }; 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
 
     const isEmptyForm = Object.values(addressData).every((field) => !field);
     setEmptyFormError(isEmptyForm ? "You need to fill out the form first!" : null);
 
     e.preventDefault();
     if(!showError && !isEmptyForm) {
-      sendAddressToApp.onSubmit(addressData);
+      setIsLoading(true)
+      
+      try {
+        await sendAddressToApp.onSubmit(addressData)
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      } finally {
+        setIsLoading(false)
+        }
+      }
     }
-  }
+  
 
   return (
     <form className='user-address-form' onSubmit={handleSubmit}> 
@@ -66,8 +77,13 @@ export default function AddressForm(sendAddressToApp) {
       {emptyFormError && <p className="error-message">{emptyFormError}</p>}
 
       <button>Submit</button>
-      <button>Try another address</button>
-      
+
+      {isLoading && (
+        <div className = 'loading-container'>
+          <PulseLoader/>
+        </div>
+      )}
+            
     </form>
   )
 }

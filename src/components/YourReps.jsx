@@ -1,7 +1,8 @@
-export default function YourReps( {reps} ) {
+import { useEffect, useState } from "react";
+import PulseLoader from 'react-spinners/PulseLoader';
 
-  // console.log(reps)
-  
+export default function YourReps( {reps} ) {
+ 
   const officesArray = reps.offices;
   const officeTitles = officesArray.map(office => office.name);
   // console.log("List of Office Names:", officesArray);
@@ -18,10 +19,16 @@ export default function YourReps( {reps} ) {
   // console.log("Array of First URL for each official:", firstOfficialsURLs);
   
   const countOfReps = officialsArray.length;
-  
+    
+  const handleReload = () => {
+    window.location.reload();
+  }
     return(
       <>
         <div className="Representatives-Container">
+        
+        <button className="new-address-button" type="button" onClick={handleReload}>Try Another Address</button>
+
           <h2>You have <span style ={{ color: "#a796f5" }}> {countOfReps}</span> people representing you!</h2>
           <p>Click on a name to learn more about them and how they represent you</p>
           <div className="reps-list">
@@ -32,7 +39,8 @@ export default function YourReps( {reps} ) {
                 </li>
               ))}          
             </ul>
-          </div>
+
+            </div>
         </div>
   
         {/* <div className="Offices-Container">
@@ -45,6 +53,9 @@ export default function YourReps( {reps} ) {
   
               </ul> 
           </div> */}
+
+        <button className="new-address-button" type="button" onClick={handleReload}>Try Another Address</button>
+
       </>
     )
   }

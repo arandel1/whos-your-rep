@@ -26,23 +26,27 @@ async function fetchRepresentativessByAddress(address) {
 
 function App() {
   const [repsData, setRepsData] = useState(null);
-
   const handleSubmit = async (addressData) => {
     const responseData = await fetchRepresentativessByAddress(addressData);
     if (responseData) {
       setRepsData(responseData);
     }
   }
+
   return (
     <>
+
       <h1>Who's Your Rep?</h1> 
       <h3>Find who is representing you on all levels of government:</h3>
+    
       <AddressForm onSubmit={handleSubmit}/>
+
       {repsData && <YourReps reps={repsData}/>}
 
       <div className = "footer-bar">
         Built and maintained by Allison Randel
       </div>
+
     </>
   )
 }
