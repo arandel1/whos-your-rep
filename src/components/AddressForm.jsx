@@ -65,7 +65,8 @@ export default function AddressForm(sendAddressToApp) {
       {showError && <p className="error-message">Remove any apartment, unit, or special characters in address.</p>}    
       {emptyFormError && <p className="error-message">{emptyFormError}</p>}
 
-      <button type = "submit">Submit</button>
+      <button>Submit</button>
+      <button>Try another address</button>
       
     </form>
   )
