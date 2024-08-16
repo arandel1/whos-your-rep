@@ -9,6 +9,7 @@ export default function AddressForm(sendAddressToApp) {
   });
 
   const [showError, setShowError] = useState(false);
+  const [emptyFormError, setEmptyFormError] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,12 +19,14 @@ export default function AddressForm(sendAddressToApp) {
   }; 
 
   const handleSubmit = (e) => {
+
+    const isEmptyForm = Object.values(addressData).every((field) => !field);
+    setEmptyFormError(isEmptyForm ? "You need to fill out the form first!" : null);
+
     e.preventDefault();
-    if(!showError){
+    if(!showError && !isEmptyForm) {
       sendAddressToApp.onSubmit(addressData);
     }
-    
-
   }
 
   return (
@@ -59,9 +62,11 @@ export default function AddressForm(sendAddressToApp) {
         onChange={handleChange}
       />            
       
-      {showError && <p className="error-message">Error: Remove any apartment, unit, or special characters in address.</p>}
+      {showError && <p className="error-message">Remove any apartment, unit, or special characters in address.</p>}    
+      {emptyFormError && <p className="error-message">{emptyFormError}</p>}
 
       <button type = "submit">Submit</button>
+      
     </form>
   )
 }

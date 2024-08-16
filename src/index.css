@@ -60,7 +60,7 @@ h1 {
   display:grid;
   gap: 2 rem;
   background-color: #a796f5;
-  border: 2px #7154f2;
+  /* border: 2px #7154f2; */
 
 }
 
@@ -73,13 +73,13 @@ h1 {
 }
 
 button {
+  background-color: red;
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
   margin: .6em;
@@ -87,6 +87,7 @@ button {
 button:hover {
   border-color: #7154f2;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -101,6 +102,6 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: red;
   }
 }
