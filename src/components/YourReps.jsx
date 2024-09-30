@@ -1,18 +1,24 @@
 import { useEffect, useState } from "react";
-import PulseLoader from 'react-spinners/PulseLoader';
 
 export default function YourReps( {reps} ) {
  
   const officesArray = reps.offices;
   const officeTitles = officesArray.map(office => office.name);
+
   // console.log("List of Office Names:", officesArray);
+
+  // console.log("List of Office Titles:", officeTitles);
+
+  // console.log("officesArray:", officesArray);
   
   const officialsArray = reps.officials;
   const namesOfOfficials = officialsArray.map(officials => officials.name);
+
+  // console.log("namesOfOfficials:", namesOfOfficials);
+  // console.log("officialsArray: ", officialsArray);
   
   const officialsURLs = officialsArray.map(officials => officials.urls);
   // console.log("Array of Officials' Urls:", officialsURLs);
-  
   // I isolated the Urls, now I have an array of arrays. Now I need to split the arrays and extract just the first url if there are two, and the single url if there's just one.
   
   const firstOfficialsURLs = officialsURLs.map(subArray => subArray[0]);
@@ -35,7 +41,7 @@ export default function YourReps( {reps} ) {
             <ul>
               {namesOfOfficials.map((title, index) => ( 
                 <li key={title}>
-                  <a href={firstOfficialsURLs[index]} target="_blank" rel="noopener noreferrer">{title}</a>
+                  <a href={firstOfficialsURLs[index]} target="_blank" rel="noopener noreferrer">{title}, </a>
                 </li>
               ))}          
             </ul>
