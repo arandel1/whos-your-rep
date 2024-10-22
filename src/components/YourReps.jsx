@@ -1,28 +1,13 @@
-import { useEffect, useState } from "react";
-
 export default function YourReps( {reps} ) {
  
   const officesArray = reps.offices;
-  const officeTitles = officesArray.map(office => office.name);
 
-  // console.log("List of Office Names:", officesArray);
-
-  // console.log("List of Office Titles:", officeTitles);
-
-  // console.log("officesArray:", officesArray);
-  
   const officialsArray = reps.officials;
   const namesOfOfficials = officialsArray.map(officials => officials.name);
-
-  // console.log("namesOfOfficials:", namesOfOfficials);
-  // console.log("officialsArray: ", officialsArray);
   
   const officialsURLs = officialsArray.map(officials => officials.urls);
-  // console.log("Array of Officials' Urls:", officialsURLs);
-  // I isolated the Urls, now I have an array of arrays. Now I need to split the arrays and extract just the first url if there are two, and the single url if there's just one.
   
   const firstOfficialsURLs = officialsURLs.map(subArray => subArray[0]);
-  // console.log("Array of First URL for each official:", firstOfficialsURLs);
   
   const countOfReps = officialsArray.length;
     
@@ -48,17 +33,6 @@ export default function YourReps( {reps} ) {
 
             </div>
         </div>
-  
-        {/* <div className="Offices-Container">
-          <h2>Offices That Represent You</h2>
-            <ul>
-  
-              {officeTitles.map(title =>( 
-                <li key={title}>{title}</li>
-              ))}
-  
-              </ul> 
-          </div> */}
 
         <button className="new-address-button" type="button" onClick={handleReload}>Try Another Address</button>
 
