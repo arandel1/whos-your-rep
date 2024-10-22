@@ -41,7 +41,7 @@ export default function YourReps( {reps} ) {
             <ul>
               {namesOfOfficials.map((title, index) => ( 
                 <li key={title}>
-                  <a href={firstOfficialsURLs[index]} target="_blank" rel="noopener noreferrer">{title}, </a>
+                  <a href={firstOfficialsURLs[index]} target="_blank" rel="noopener noreferrer">{title} </a>
                 </li>
               ))}          
             </ul>
